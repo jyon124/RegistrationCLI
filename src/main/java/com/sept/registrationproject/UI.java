@@ -88,7 +88,7 @@ public class UI {
 			System.out.println("1. Create & Add New User");
 			System.out.println("2. Display List of users");
 			System.out.println("3. Remove user");
-			System.out.println("4. Exit");
+			System.out.println("4. Exit");	
 			int temp = input.nextInt();
 			if(temp == 1) {
 				User user = new User();
@@ -105,6 +105,8 @@ public class UI {
 			} else if(temp == 4) {
 				System.out.println("Successfully Logged out from the program.");
 				wantExit = true;
+			} else {
+				System.out.println("Please enter a valid number from the list.");
 			}
 		}
 	}
