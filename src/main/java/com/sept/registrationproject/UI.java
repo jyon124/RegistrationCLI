@@ -18,7 +18,6 @@ public class UI {
 				return;
 			}
 			user.setFirstName(temp);
-			user.getFirstName();
 		}
 		
 		System.out.print("Enter a Last Name: ");
