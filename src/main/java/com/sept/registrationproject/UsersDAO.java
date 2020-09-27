@@ -1,8 +1,10 @@
 package com.sept.registrationproject;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class UsersDAO {
 	private ArrayList<User> userList = new ArrayList<User>();
+	Scanner input = new Scanner(System.in); 
 	
 	public void addUser(User user) {
 		userList.add(user);
@@ -19,8 +21,17 @@ public class UsersDAO {
 		userList.remove(selectedUser);
 	}
 	
-	public void updateUser(User user) {
-		// Take a input for only name, email, password, and gender
+	public void updateUser(User userObj) {
+		System.out.println("Enter a current password for selected user:");
+		String currPw = input.nextLine();
+		if(currPw.equals(userObj.getPassword())) {
+			System.out.println("Enter a new password:");
+			System.out.println("Length has to be longer than 8 & Shorter than 20");
+			System.out.println("At least one lowercase, uppercase, number, special character among @#$%");
+			String newPw = input.nextLine();
+			userObj.setPassword(newPw);
+		}
+		System.out.println("Incorrect current password for " + userObj.getLastName() + " " + userObj.getFirstName());
 	}
 	
 	public User get(int choice) {

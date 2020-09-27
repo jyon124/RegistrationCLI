@@ -62,8 +62,8 @@ public class User {
 			System.out.println("Successfully stored: " + email);
 			return true;
 	      } else {
-	    	  System.out.println("Please Enter a valid email format.");
-	    	  return false;
+	    	System.out.println("Please Enter a valid email format.");
+	    	return false;
 	      }
 	}
 	
