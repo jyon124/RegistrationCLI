@@ -1,5 +1,6 @@
 package com.sept.registrationproject;
 import java.util.Scanner;
+import java.sql.*;
 
 public class UI {
 	
@@ -88,7 +89,7 @@ public class UI {
 			System.out.println("1. Create & Add New User");
 			System.out.println("2. Display List of users");
 			System.out.println("3. Remove user");
-			System.out.println("4. Update password");
+			System.out.println("4. Update First Name");
 			System.out.println("5. Exit");	
 			int temp = input.nextInt();
 			if(temp == 1) {
@@ -100,18 +101,18 @@ public class UI {
 				System.out.println("Select a number that you want to remove from the list:");
 				System.out.println("or enter '0' to be back");
 				userList.printUsers();
-				int choice = input.nextInt()-1;
-				if(choice == -1) ;
-				else userList.removeUser(userList.get(choice));
+				int choice = input.nextInt();
+				if(choice == 0) ;
+				else userList.removeUser(choice);
 			} else if (temp == 4) {
-				System.out.println("Select a number that you want to update password from the user list:");
+				System.out.println("Select a number that you want to update first name from the user list:");
 				System.out.println("or enter '0' to be back");
 				userList.printUsers();
-				int ch = input.nextInt()-1;
-				if(ch == -1) {
+				int ch = input.nextInt();
+				if(ch == 0) {
 					
 				} else {
-					userList.updateUser(userList.get(ch));
+					userList.updateUser(ch);
 				}
 			} else if(temp == 5) {
 				System.out.println("Successfully Logged out from the program.");
